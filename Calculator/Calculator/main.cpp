@@ -7,6 +7,7 @@ using std::endl;
 
 int main()
 {
+	//Home
 	Vector v1(3, 2, 1);
 	Vector v2(1, 2, 3);
 	v2.setVector(3, 4, 7);
