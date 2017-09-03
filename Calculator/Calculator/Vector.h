@@ -28,6 +28,7 @@ public:
 
 	Vector &equals(Vector &v);
 	bool operator==(const Vector &v);
+	bool operator||(const Vector &v);
 	Vector &operator=(Vector &v);
 	Vector &operator*=(Vector &v);
 	double &operator*(Vector &v);
