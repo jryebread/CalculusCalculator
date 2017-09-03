@@ -53,6 +53,14 @@ Vector &Vector::equals(Vector & v)
 	return *this;
 }
 
+bool Vector::operator==(const Vector &v)
+{
+	if (x == v.x && y == v.y && z == v.z)
+		return true;
+	else
+		return false;
+}
+
 Vector & Vector::operator=(Vector & v)
 {
 	return this->equals(v);
