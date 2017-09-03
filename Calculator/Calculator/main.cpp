@@ -31,6 +31,16 @@ int main()
 		cout << " True" << endl;
 	else
 		cout << "false" << endl;
+	Vector v3(1, 2, 3);
+	Vector v4(2, 4, 6);
+	cout << "\n CROSS PRODUCT" << endl;
+	cout << v3.getCrossProduct(v4) << endl;
+	cout << v3 << endl;
+	cout << v4 << endl;
 
+	if (v3 || v4)
+		cout << "true bro " << endl;
+	else
+		cout << "nah" << endl;
 	return 0;
 }

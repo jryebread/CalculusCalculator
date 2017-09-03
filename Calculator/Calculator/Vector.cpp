@@ -34,14 +34,14 @@ double Vector::getMagnitude()
 	return magnitude;
 }
 
-double Vector::getDotProduct(Vector v1, Vector v2)
+double Vector::getDotProduct(Vector v2)
 {
-	return ((v1.getX() * v2.getX()) + (v1.getY() + v2.getY()) + (v1.getZ() + v2.getZ()));
+	return ((getX() * v2.getX()) + (getY() + v2.getY()) + (getZ() + v2.getZ()));
 }
 
-Vector Vector::getCrossProduct(Vector v1, Vector v2)
+Vector Vector::getCrossProduct(Vector v2)
 {
-	Vector newVector(((v2.z*v1.y) - (v1.z*v2.y)), -((v1.x*v2.z) - (v2.x*v1.z)), ((v1.x*v2.y) - (v2.x*v1.y)));
+	Vector newVector(((v2.z*this->y) - (this->z*v2.y)), (-1) * ((this->x*v2.z) - (v2.x*this->z)), ((this->x*v2.y) - (v2.x*this->y)));
 	return newVector;
 	/*newVector.x =	((v2.z*v1.y) - (v1.z*v2.y));
 	newVector.y =	-((v1.x*v2.z) - (v2.x*v1.z));
@@ -74,6 +74,14 @@ bool Vector::operator==(const Vector &v)
 		return false;
 }
 
+bool Vector::operator||( Vector & v)
+{
+	if (getCrossProduct(v) == Vector(0, 0, 0))
+		return true;
+	else
+		return false;
+}
+
 Vector & Vector::operator=(Vector & v)
 {
 	return this->equals(v);
@@ -89,7 +97,7 @@ Vector &Vector::operator*=(Vector & v)
 
 double & Vector::operator*(Vector & v)
 {
-	double dotProduct = getDotProduct(*this, v);
+	double dotProduct = getDotProduct(v);
 	return dotProduct;
 }
 
