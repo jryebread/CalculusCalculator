@@ -8,12 +8,14 @@ using std::istream;
 class Vector
 {
 public:
+	Vector();
 	Vector(double x, double y, double z);
 	Vector(Vector &v);
 	void setVector(double x, double y, double z);
 	void setVector(Vector &v);
 
 	double getDotProduct(Vector v1, Vector v2);
+	Vector getCrossProduct(Vector v1, Vector v2);
 	Vector getUnitVector(double x, double y, double z);
 	double getMagnitude();
 	double getMagnitude(double x, double y, double z);

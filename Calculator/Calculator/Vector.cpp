@@ -1,9 +1,13 @@
 #include "Vector.h"
 
-Vector::Vector(double x, double y, double z)
-	:x(x), y(y), z(z)
+Vector::Vector()
 {
-	this->magnitude = getMagnitude(x,y,z);
+	this->setVector(1, 1, 1);
+}
+
+Vector::Vector(double x, double y, double z)
+{
+	this->setVector(x, y, z);
 }
 
 Vector::Vector(Vector &v)
@@ -33,6 +37,15 @@ double Vector::getMagnitude()
 double Vector::getDotProduct(Vector v1, Vector v2)
 {
 	return ((v1.getX() * v2.getX()) + (v1.getY() + v2.getY()) + (v1.getZ() + v2.getZ()));
+}
+
+Vector Vector::getCrossProduct(Vector v1, Vector v2)
+{
+	Vector newVector(((v2.z*v1.y) - (v1.z*v2.y)), -((v1.x*v2.z) - (v2.x*v1.z)), ((v1.x*v2.y) - (v2.x*v1.y)));
+	return newVector;
+	/*newVector.x =	((v2.z*v1.y) - (v1.z*v2.y));
+	newVector.y =	-((v1.x*v2.z) - (v2.x*v1.z));
+	newVector.z =	((v1.x*v2.y) - (v2.x*v1.y));*/
 }
 
 Vector Vector::getUnitVector(double x, double y, double z)
