@@ -27,20 +27,19 @@ int main()
 	cout << v1 << endl; //overloaded vector stream operator
 	v1 *= 4; //scalar multiplication
 	cout << v1 << endl; 
-	if (v1 == v2)
-		cout << " True" << endl;
-	else
-		cout << "false" << endl;
+	v1 == v2 ? cout << "true" << endl : std::cout << "false vectors are not equal" << endl;
+
+	cout << "Enter a x, y , and z component for the vector v1 " << endl;
+	std::cin >> v1;
+	cout << "v1 is : " << v1 << endl;
+
 	Vector v3(1, 2, 3);
 	Vector v4(2, 4, 6);
 	cout << "\n CROSS PRODUCT" << endl;
 	cout << v3.getCrossProduct(v4) << endl;
 	cout << v3 << endl;
 	cout << v4 << endl;
-
-	if (v3 || v4)
-		cout << "true bro " << endl;
-	else
-		cout << "nah" << endl;
+	
+	v3 || v4 ? cout << "true" << endl : std::cout << "false" << endl;
 	return 0;
 }
